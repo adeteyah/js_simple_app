@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Calculator</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="h-svh flex justify-center items-center">
+      <div class="grid gap-4">
+        <input type="text" id="monitor" class="p-4 rounded border" disabled />
+        <div class="flex gap-4 justify-between">
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            7
+          </button>
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            8
+          </button>
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            9
+          </button>
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            /
+          </button>
+        </div>
+        <div class="flex gap-4 justify-between">
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            4
+          </button>
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            5
+          </button>
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            6
+          </button>
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            *
+          </button>
+        </div>
+        <div class="flex gap-4 justify-between">
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            1
+          </button>
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            2
+          </button>
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            3
+          </button>
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            -
+          </button>
+        </div>
+        <div class="flex gap-4 justify-between">
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            0
+          </button>
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            .
+          </button>
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="calculateNow()"
+          >
+            =
+          </button>
+          <button
+            class="p-4 min-w-1/5 rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="toMonitor()"
+          >
+            +
+          </button>
+        </div>
+        <div>
+          <button
+            class="p-4 w-full rounded border hover:bg-[cyan] active:bg-[blue]"
+            onclick="clearMonitor()"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    console.log(document.getElementById("monitor").value);
+    var e = document.getElementById("monitor");
+    function toMonitor() {
+      console.log(event.target.dataset.item);
+      e.value += event.target.innerHTML.trim().replace(/&nbsp;/g, "");
+    }
+    function clearMonitor() {
+      e.value = "";
+    }
+    function calculateNow() {
+      e.value = eval(e.value.replace(/[^0-9\+\-\*\/]/g, ""));
+    }
+  </script>
+</html>
